@@ -86,7 +86,85 @@ public class calculadora extends AppCompatActivity {
         cap = cap+"0";
         pant.setText(cap);
     }
+    //MÉTODOS PARA LAS OPERACIONES
 
+    public void btn_suma(View v){
+        try{
+            String aux1 = pant.getText().toString();
+            operacion1 = Double.parseDouble(aux1);
+        }catch (NumberFormatException nfe){}
+
+        pant.setText("");
+        ope = 1;
+    }
+
+    public void btn_resta(View v){
+        try{
+            String aux1 = pant.getText().toString();
+            operacion1 = Double.parseDouble(aux1);
+        }catch (NumberFormatException nfe){}
+
+        pant.setText("");
+        ope = 2;
+    }
+
+    public void btn_multiplica(View v){
+        try{
+            String aux1 = pant.getText().toString();
+            operacion1 = Double.parseDouble(aux1);
+        }catch (NumberFormatException nfe){}
+
+        pant.setText("");
+        ope = 3;
+    }
+
+    public void btn_divide(View v){
+        try{
+            String aux1 = pant.getText().toString();
+            operacion1 = Double.parseDouble(aux1);
+        }catch (NumberFormatException nfe){}
+
+        pant.setText("");
+        ope = 4;
+    }
+
+
+    //MÉTODO PARA EL RESULTADO
+
+    public void btn_resultado(View v){
+        try{
+            String aux2 = pant.getText().toString();
+            operacion2 = Double.parseDouble(aux2);
+        }catch (NumberFormatException nfe){}
+        pant.setText("");
+
+        if(ope == 1){
+            respuesta = operacion1 + operacion2;
+        }else if(ope == 2){
+            respuesta = operacion1-operacion2;
+        }else if(ope == 3){
+            respuesta = operacion1*operacion2;
+        }else if(ope == 4){
+            respuesta = operacion1 / operacion2;
+        }
+
+        pant.setText(""+respuesta);
+        operacion1 = respuesta;
+    }
+
+    //MÉTODO LIMPIAR
+    public void btn_limpiar(View v){
+        pant.setText("");
+        operacion1 = 0.0;
+        operacion2 = 0.0;
+        respuesta = 0.0;
+    }
+
+    //MÉTODO BOTÓN CERRAR
+
+    public void btn_cerrar(View v){
+        finish();
+    }
     
 }
 
